@@ -174,7 +174,7 @@ header.sticky {
 }
 
 .typing-text span::before{
-    content: "Desenvolvedor de software";
+    content: "Desenvolvedor Python";
     color: #b74b4b;
     animation: words 20s infinite;
 }
@@ -458,16 +458,16 @@ textarea {
 
 @keyframes words{
     0%, 20%{
-        content: "Desenvolvedor web";
+        content: "Desenvolvedor Python";
     }
     21%, 40%{
-        content: "Desenvolvedor";
+        content: "Desenvolvedor RPA";
     }
     41%, 60%{
-        content: "Web Designer";
+        content: "Desenvolvedor Web";
     }
     61%, 80%{
-        content: "Criador de conteúdo";
+        content: "Analista de dados";
     }
 }
 
@@ -553,5 +553,83 @@ textarea {
 
     .home-img img {
         width: 80vw;
+    }
+}
+
+/* --- ESTILOS PARA PÁGINAS DE PROJETOS --- */
+
+.projeto-detalhes {
+    padding-top: 10rem;
+    min-height: 80vh;
+}
+
+.destaque-projeto {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 5rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(183, 75, 75, 0.5); 
+    background-color: #0d0d0d;
+}
+
+.destaque-projeto video,
+.destaque-projeto img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.detalhes-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.detalhes-content h3 {
+    font-size: 3rem;
+    color: #b74b4b;
+    margin: 4rem 0 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #333;
+}
+
+.detalhes-content p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+.tecnologias-usadas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.projeto-detalhes .skill-box {
+    padding: 2.5rem;
+}
+
+.links-projeto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 4rem;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .projeto-detalhes {
+        padding-top: 8rem;
+    }
+
+    .detalhes-content h3 {
+        font-size: 2.5rem;
+    }
+
+    .detalhes-content p {
+        font-size: 1.6rem;
     }
 }
