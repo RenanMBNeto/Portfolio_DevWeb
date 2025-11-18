@@ -251,7 +251,7 @@ header.sticky {
 
 /* Animação das palavras */
 .typing-text span::before{
-    content: "Dev Python";
+    content: "Desenvolvedor Python";
     color: #3d31de;
     animation: words 20s infinite;
 }
@@ -558,9 +558,6 @@ textarea {
 }
 
 @keyframes words{
-    0%, 20%{
-        content: "Desenvolvedor Python";
-    }
     21%, 40%{
         content: "Desenvolvedor RPA";
     }
