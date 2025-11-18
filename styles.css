@@ -1,3 +1,11 @@
+/* =====================================================================
+   IMPORTAÇÃO DE FONTES E RESET GLOBAL
+   - Define fonte padrão
+   - Remove margens/paddings nativos
+   - Ativa o box-sizing consistente
+   - Remove decorações e outline
+   - Habilita rolagem suave
+===================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
 *{
@@ -11,10 +19,19 @@
     scroll-behavior: smooth;
 }
 
+/* ---------------------------------------------------------------------
+   TAMANHO BASE DA FONTE
+   - Facilita uso de rem (1rem = 10px)
+--------------------------------------------------------------------- */
 html{
     font-size: 62.5%;
 }
 
+/* ---------------------------------------------------------------------
+   ESTILOS PRINCIPAIS DO BODY
+   - Remove rolagem horizontal
+   - Ativa tema escuro
+--------------------------------------------------------------------- */
 body{
     width: 100%;
     overflow-x: hidden;
@@ -22,42 +39,79 @@ body{
     color: white;
 }
 
+/* ---------------------------------------------------------------------
+   SEÇÕES DO SITE
+   - Altura mínima fullscreen
+   - Espaçamento interno
+--------------------------------------------------------------------- */
 section{
     min-height: 100vh;
     padding: 10rem 9% 5rem;
 }
 
+/* ---------------------------------------------------------------------
+   COR DE DESTAQUE PARA <span>
+--------------------------------------------------------------------- */
 span {
-    color: #b74b4b;
+    color: #3d31de;
 }
 
+/* ---------------------------------------------------------------------
+   ESTILO SIMPLES PARA LISTAS <li>
+--------------------------------------------------------------------- */
+li {
+    font-size: 16px;
+    margin-right: 5px;
+    padding-left: 20px;
+}
+
+/* ---------------------------------------------------------------------
+   PADRÕES PARA TODAS AS <img>
+--------------------------------------------------------------------- */
+img {
+    width: 100%;
+    border-radius: 2 0px;
+}
+
+/* ---------------------------------------------------------------------
+   BOTÕES GERAIS (classes .btn)
+--------------------------------------------------------------------- */
 .btn{
     display: inline-block;
     padding: 1rem 2.8rem;
     background-color: black;
     border-radius: 4rem;
     font-size: 1.6rem;
-    color: #b74b4b;
+    color: #3d31de;
     letter-spacing: 0.3rem;
     font-weight: 600;
-    border: 2px solid #b74b4b;
+    border: 2px solid #3d31de;
     transition: 0.3s ease;
     cursor: pointer;
 }
 
+/* Hover do botão */
 .btn:hover{
     transform: scale(1.03);
-    background-color: #b74b4b;
+    background-color: #3d31de;
     color: black;
-    box-shadow: 0 0 25px #b74b4b;
+    box-shadow: 0 0 25px #3d31de;
 }
 
+/* ---------------------------------------------------------------------
+   TÍTULOS DAS SEÇÕES
+--------------------------------------------------------------------- */
 .heading {
     font-size: 4.5rem;
     text-align: center;
     margin-bottom: 5rem;
 }
 
+/* =====================================================================
+   CABEÇALHO FIXO
+   - Fica preso ao topo
+   - Ganha fundo quando ativado (classe .sticky)
+===================================================================== */
 header{
     position: fixed;
     top: 0;
@@ -70,16 +124,23 @@ header{
     align-items: center;
     z-index: 100;
     transition: 0.3s ease;
+
+    /* overflow: hidden; impede conteúdo da home empurrar a navbar */
+    height: 70px; /*trava a altura para que nada empurre */
 }
 
+/* Cabeçalho quando rola */
 header.sticky {
     background-color: #161616;
     box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
 }
 
+/* ---------------------------------------------------------------------
+   LOGO DO SITE
+--------------------------------------------------------------------- */
 .logo{
     font-size: 3rem;
-    color: #b74b4b;
+    color: #3d31de;
     font-weight: 800;
     cursor: pointer;
     transition: 0.5s ease;
@@ -89,6 +150,9 @@ header.sticky {
     transform: scale(1.1);
 }
 
+/* ---------------------------------------------------------------------
+   NAVBAR (menu desktop)
+--------------------------------------------------------------------- */
 .navbar a{
     font-size: 1.8rem;
     color: white;
@@ -100,10 +164,11 @@ header.sticky {
 
 .navbar a:hover,
 .navbar a.active{
-    color: #b74b4b;
-    border-bottom: 3px solid #b74b4b;
+    color: #3d31de;
+    border-bottom: 3px solid #3d31de;
 }
 
+/* Ícone do menu mobile (hamburger) */
 #menu-icon {
     font-size: 3.6rem;
     color: white;
@@ -111,6 +176,10 @@ header.sticky {
     cursor: pointer;
 }
 
+/* =====================================================================
+   SEÇÃO HOME
+   - Layout com imagem + texto
+===================================================================== */
 .home{
     display: flex;
     justify-content: center;
@@ -134,11 +203,12 @@ header.sticky {
     font-size: 1.6rem;
 }
 
+/* Imagem em formato circular com sombra */
 .home-img img{
     position: relative;
     width: 32vw;
     border-radius: 50%;
-    box-shadow: 0 0 25px #b74b4b;
+    box-shadow: 0 0 25px #3d31de;
     cursor: pointer;
     transition: 0.2s linear;
 }
@@ -147,6 +217,9 @@ header.sticky {
     transform: scale(1.05);
 }
 
+/* =====================================================================
+   ICONES SOCIAIS
+===================================================================== */
 .social-icons a{
     display: inline-flex;
     justify-content: center;
@@ -154,46 +227,55 @@ header.sticky {
     width: 4rem;
     height: 4rem;
     background-color: transparent;
-    border: 0.2rem solid #b74b4b;
+    border: 0.2rem solid #3d31de;
     font-size: 2rem;
     border-radius: 50%;
     margin: 3rem 1.5rem 3rem 0;
     transition: 0.3s ease;
-    color: #b74b4b;
+    color: #3d31de;
 }
 
 .social-icons a:hover{
     color: black;
     transform: scale(1.3) translateY(-5px);
-    background-color: #b74b4b;
-    box-shadow: 0  0 25px #b74b4b;
+    background-color: #3d31de;
+    box-shadow: 0  0 25px #3d31de;
 }
 
+/* =====================================================================
+   TEXTO ANIMADO "TYPING EFFECT"
+===================================================================== */
 .typing-text span{
     position: relative;
 }
 
+/* Animação das palavras */
 .typing-text span::before{
-    content: "Desenvolvedor Python";
-    color: #b74b4b;
+    content: "Dev Python";
+    color: #3d31de;
     animation: words 20s infinite;
 }
 
+/* Cursor piscando */
 .typing-text span::after{
     content: "";
     background-color: black;
     position: absolute;
-    width: calc(100% + 8px);
-    height: 100%;
+    width: calc(10%);  /* + 8px */
+    height: 50px;  /* 100% */
     border-left: 3px solid black;
     right: -8;
     animation: cursor 0.6s infinite;
 }
 
+/* =====================================================================
+   SEÇÃO SKILLS
+===================================================================== */
 .skills {
     background-color: #161616;
 }
 
+/* Grid de caixinhas */
 .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -211,12 +293,13 @@ header.sticky {
 
 .skill-box:hover {
     transform: scale(1.03);
-    border-color: #b74b4b;
+    border-color: #3d31de;
 }
 
+/* Ícones grandes */
 .skill-box i {
     font-size: 6rem;
-    color: #b74b4b;
+    color: #3d31de;
     margin-bottom: 1.5rem;
 }
 
@@ -231,6 +314,9 @@ header.sticky {
     color: #ccc;
 }
 
+/* =====================================================================
+   SEÇÃO QUALIFICAÇÕES
+===================================================================== */
 .qualificacoes {
     background-color: #161616;
 }
@@ -240,6 +326,7 @@ header.sticky {
     overflow-x: auto;
 }
 
+/* Estilo da tabela */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -250,7 +337,7 @@ table {
 }
 
 table thead tr {
-    background-color: #b74b4b;
+    background-color: #3d31de;
     color: black;
     font-weight: 600;
 }
@@ -270,6 +357,9 @@ table tbody tr:hover {
     background-color: #111;
 }
 
+/* =====================================================================
+   SEÇÃO PROJETOS
+===================================================================== */
 .projetos {
     background-color: black;
 }
@@ -289,6 +379,7 @@ table tbody tr:hover {
     height: 0;
 }
 
+/* Imagens e vídeos responsivos */
 .projeto-box img,
 .projeto-box video {
     position: absolute;
@@ -305,13 +396,14 @@ table tbody tr:hover {
     transform: scale(1.1);
 }
 
+/* Camada com texto no hover */
 .projeto-layer {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), #b74b4b);
+    background: linear-gradient(rgba(0, 0, 0, 0.4), #3d31de);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -353,6 +445,9 @@ table tbody tr:hover {
     color: #333;
 }
 
+/* =====================================================================
+   SEÇÃO CONTATO
+===================================================================== */
 .contato {
     background-color: #161616;
 }
@@ -411,6 +506,9 @@ textarea {
     resize: none;
 }
 
+/* =====================================================================
+   RODAPÉ
+===================================================================== */
 .footer {
     padding: 3rem 9%;
     background-color: black;
@@ -436,13 +534,13 @@ textarea {
     justify-content: center;
     align-items: center;
     padding: 0.8rem;
-    background-color: #b74b4b;
+    background-color: #3d31de;
     border-radius: 0.8rem;
     transition: 0.3s ease;
 }
 
 .footer-icon-top a:hover {
-    box-shadow: 0 0 15px #b74b4b;
+    box-shadow: 0 0 15px #3d31de;
 }
 
 .footer-icon-top a i {
@@ -450,9 +548,12 @@ textarea {
     color: black;
 }
 
+/* =====================================================================
+   ANIMAÇÕES DO TEXTO
+===================================================================== */
 @keyframes cursor{
     to{
-        border-left: 3px solid #b74b4b;
+        border-left: 3px solid #3d31de;
     }
 }
 
@@ -471,6 +572,9 @@ textarea {
     }
 }
 
+/* =====================================================================
+   RESPONSIVIDADE - LARGURA ≤ 995px
+===================================================================== */
 @media (max-width: 995px) {
     #menu-icon {
         display: block;
@@ -482,8 +586,8 @@ textarea {
         top: 100%;
         right: 0;
         width: 40%;
-        border-left: 3px solid #b74b4b;
-        border-bottom: 3px solid #b74b4b;
+        border-left: 3px solid #3d31de;
+        border-bottom: 3px solid #3d31de;
         border-bottom-left-radius: 2rem;
         padding: 1rem;
         background-color: #161616;
@@ -505,10 +609,13 @@ textarea {
     .navbar a.active{
         padding: 1rem;
         border-radius: 0.5rem;
-        border-bottom: 0.5rem solid #b74b4b;
+        border-bottom: 0.5rem solid #3d31de;
     }
 }
 
+/* =====================================================================
+   RESPONSIVIDADE - LARGURA ≤ 768px
+===================================================================== */
 @media (max-width: 768px) {
     .heading {
         font-size: 4rem;
@@ -542,6 +649,9 @@ textarea {
     }
 }
 
+/* =====================================================================
+   RESPONSIVIDADE - LARGURA ≤ 450px
+===================================================================== */
 @media (max-width: 450px) {
     html {
         font-size: 55%;
@@ -556,8 +666,9 @@ textarea {
     }
 }
 
-/* --- ESTILOS PARA PÁGINAS DE PROJETOS --- */
-
+/* =====================================================================
+   ESTILOS PARA PÁGINAS INTERNAS DE PROJETOS
+===================================================================== */
 .projeto-detalhes {
     padding-top: 10rem;
     min-height: 80vh;
@@ -588,7 +699,7 @@ textarea {
 
 .detalhes-content h3 {
     font-size: 3rem;
-    color: #b74b4b;
+    color: #3d31de;
     margin: 4rem 0 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid #333;
@@ -632,4 +743,15 @@ textarea {
     .detalhes-content p {
         font-size: 1.6rem;
     }
+}
+
+/* =============== Elementos que o Randú adicionou ==================== */
+
+/* Tirar a decoração de link na navbar */
+.navbar a {
+    text-decoration: none !important;
+}  
+
+.pag-atualizar-planilha .projeto-detalhes {
+    margin-top: 80px;
 }
